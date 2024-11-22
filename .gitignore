@@ -1,1 +1,11 @@
-/bin/
+# Eclipse project files 
+/.project 
+/.classpath 
+/.settings/ 
+# Eclipse build directory 
+/bin/ 
+# Maven target directory 
+/target/ 
+# IDE-specific files 
+*.log 
+*.tmp
