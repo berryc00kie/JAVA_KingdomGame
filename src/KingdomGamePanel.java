@@ -120,7 +120,7 @@ public class KingdomGamePanel extends JPanel {
     	//국방,국고, 민심 순서
     	
     	 questions.add(new Question("적국이 국경을 넘어왔습니다. 전쟁을 선포하시겠습니까?",
-    	            new Answer("전쟁을 선포했지만 처참히 패했습니다.\n모든 수치 -20", -20, -20, -20),
+    	            new Answer("전쟁을 선포했지만 패했습니다.\n모든 수치 -15", -15, -15, -15),
     	            new Answer("적당한 경고로 무사히 넘어갔습니다\n변화 없음", 0, 0, 0),
     	            Question.a));
     	 
@@ -128,6 +128,11 @@ public class KingdomGamePanel extends JPanel {
  	            new Answer("전쟁을 선포했고 작은 승리를 거뒀습니다.\n모든 수치 +10", +10, +10, +10),
  	            new Answer("위험을 감수하진 않았습니다. 그러나 국경의 백성들이 고통스러워합니다.\n민심-10", 0, 0, -10),
  	            Question.a));
+    	 
+    	 questions.add(new Question("적국이 국경을 넘어왔습니다. 전쟁을 선포하시겠습니까?",
+  	            new Answer("전쟁을 선포했고 작은 승리를 거뒀습니다.\n모든 수치 +10", +10, +10, +10),
+  	            new Answer("적당한 경고로 무사히 넘어갔습니다\n변화 없음", 0, 0, 0),
+  	            Question.a));
     	 
     	 questions.add(new Question("적국이 국경을 넘어왔습니다. 전쟁을 선포하시겠습니까?",
   	            new Answer("전쟁을 선포했고 엄청난 승리를 거뒀습니다.\n모든 수치 +20", +20, +20, +20),
@@ -146,11 +151,16 @@ public class KingdomGamePanel extends JPanel {
     	        
     	        questions.add(new Question("흉년이 들어 백성들이 굶주리고 있사옵니다. 바라건대, 곡식을 나누어 주시어 백성들의 굶주림을 덜어 주시옵소서.",
     	                new Answer("곡식을 나누어줬습니다. 백성들이 행복해합니다.\n국고 -10, 민심 +10", 0, -10, +10),
-    	                new Answer("곡식을 나누지 않았습니다. 국지적인 봉기가 일어났습니다.\n모든 수치 -5", -5, -5, -1),
+    	                new Answer("곡식을 나누지 않았습니다. 국지적인 봉기가 일어났습니다.\n모든 수치 -5", -5, -5, -5),
     	                Question.c));
     	        
     	        questions.add(new Question("올해는 풍년입니다. 기념하여 잔치를 여시겠습니까",
     	                new Answer("즐거운 잔치를 베푸니 나라에 활기가 돕니다\n모든 수치+10", 10, 10, 10),
+    	                new Answer("잔치를 열지 않았습니다.\n국고+20", 0, 20, 0),
+    	                Question.h));
+    	        
+    	        questions.add(new Question("올해는 풍년입니다. 기념하여 잔치를 여시겠습니까",
+    	                new Answer("백성들은 잔치가 사치스럽다고 여겼습니다\n국고+10 민심-10", 0, 10, -10),
     	                new Answer("잔치를 열지 않았습니다.\n국고+20", 0, 20, 0),
     	                Question.h));
 
@@ -160,13 +170,13 @@ public class KingdomGamePanel extends JPanel {
         	            Question.d));
 
     	        questions.add(new Question("최근 외적의 침입이 빈번하옵니다. 군사력을 강화하시옵소서.",
-    	                new Answer("군사력을 강화했습니다. 영토를 지켰습니다.\n국방+10 국고 -20", +10,-20, 0),
-    	                new Answer("군사력을 강화하지 않은 가운데 외적의 침입이 있었습니다.\n모든 수치 -10", -10, -10, -10),
+    	                new Answer("군사력을 강화했습니다. 영토를 지켰습니다.\n국방+10 국고 -10", +10,-10,0),
+    	                new Answer("군사력을 강화하지 않은 가운데 외적의 침입이 있었습니다.\n모든 수치 -5", -5, -5, -5),
         	            Question.e));
     	        
     	        questions.add(new Question("최근 외적의 침입이 빈번하옵니다. 군사력을 강화하시옵소서.",
     	                new Answer("군사력을 강화했습니다\n국방+10 국고-10", +10, -10, 0),
-    	                new Answer("군사력을 강화하지 않았습니다. 그러나 아무일도 일어나지 않았습니다. 좋은 절약이었던 것 같습니다.", +5, 0, 0),
+    	                new Answer("군사력을 강화하지 않았습니다. 그러나 아무일도 일어나지 않았습니다.\n 국고+5", 0, 5, 0),
         	            Question.e));
 
     	        questions.add(new Question("국가의 재정이 어려워지고 있사옵니다. 절약 방안을 마련하시길 청하옵니다.",
@@ -190,7 +200,7 @@ public class KingdomGamePanel extends JPanel {
     	                Question.g));
     	        
     	        questions.add(new Question("외국의 배가 항구에 정박했습니다. 상인들과의 거래를 허락하겠습니까?",
-    	                new Answer("우리의 물건이 더 많이 팔려 엄청난 무역 흑자를 이뤄냈습니다. \n국고 +20", 0, +20, 0),
+    	                new Answer("우리의 물건이 더 많이 팔려 무역 흑자를 이뤄냈습니다. \n국고 +20", 0, +10, 0),
     	                new Answer("화가 난 외국의 상인들이 난동을 피우고 돌아갔습니다\n 모든 수치 -5", -5, -5, -5),
     	                Question.g));
 
