@@ -2,7 +2,7 @@ import javax.swing.JFrame;
 //import KingdomGame.KingdomGamePanel;
 
 public class KingdomGameGUI {
-    public static final String IMAGE_PATH = "C:\\Users\\qwo78\\eclipse-workspace\\KingdomGame\\src\\image\\";
+    public static final String IMAGE_PATH = "C:\\Users\\qwo78\\eclipse-workspace\\1121\\src\\image\\";
     
     public static void main(String[] args) {
         KingdomGamePanel panel = new KingdomGamePanel(IMAGE_PATH);
