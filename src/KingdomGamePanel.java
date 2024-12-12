@@ -412,27 +412,34 @@ public class KingdomGamePanel extends JPanel {
         //statusLabel.setText(status);
     }
 
-
     private class ButtonListener implements ActionListener {
+        //사용자의 선택에 따라 게임 상태를 업데이트하고 다음턴으로 진행
         @Override
         public void actionPerformed(ActionEvent e) {
+            //버튼의 커맨드 문자열 변환
             String command = e.getActionCommand();
             String[] parts = command.split(":");
             int questionIndex = Integer.parseInt(parts[1]);
+
+            // 현재 질문과 답변 가져오기
             Question currentQuestion = questions.get(questionIndex);
             Answer selectedAnswer = parts[0].equals("yes") ? currentQuestion.getYesAnswer() : currentQuestion.getNoAnswer();
             
+            //게임 상태 업데이트
             defense += selectedAnswer.getDefenseChange();
             treasury += selectedAnswer.getTreasuryChange();
             loyalty += selectedAnswer.getLoyaltyChange();
             
+            //게임 상태 값 범위 제한
             defense = Math.max(0, Math.min(500, defense));
             treasury = Math.max(0, Math.min(500, treasury));
             loyalty = Math.max(0, Math.min(500, loyalty));
             
+            //결과 메시지 팝업 표시
             JOptionPane.showMessageDialog(KingdomGamePanel.this, selectedAnswer.getResponseText(), "결과", JOptionPane.INFORMATION_MESSAGE);
+            
+            //UI업데이트 및 다음 턴으로...
             updateStatusLabel();
-
             nextTurn();
         }
     }
